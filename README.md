@@ -2,7 +2,9 @@
 
 Hello there, and welcome to this Github-page, which is dedicated to the code relevant for my thesis, completing the degree M.sc. Computational Science: Physics (2020-2022).
 
-[![docs](https://github.com/Cascella-Group-UiO/HyMD/actions/workflows/docs_pages.yml/badge.svg)]
+<a href="https://cascella-group-uio.github.io/HyMD/">
+  <img src="https://github.com/Cascella-Group-UiO/HyMD/blob/main/docs/img/hymd_logo_text_black.png?raw=true" width="500" title="HylleraasMD">
+</a>
 
 ### Main overview:
 * This repository contains programmes used in the simulation and analysis of biological model systems of Lipid A hexa and Lipid Re penta, which is both chemical components  of the outer membrane lipopolysaccharides in gram negative bacteria.
