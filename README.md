@@ -2,7 +2,7 @@
 
 Hello there, and welcome to this Github-page, which is dedicated to the code relevant for thesis for the Degree M.sc. Computational Science: Physics. 
 
-![picture](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/membrane-la6-ua-ref-kopi.pdf)
+![Picture](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/membrane-la6-ua-ref-kopi.pdf)
 
 ### Main overview:
 
