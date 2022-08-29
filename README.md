@@ -51,13 +51,15 @@ My contributions can be summarized as follows:
     2. Optimize Flory Huggins mixing parameters for LA6 with divalent counter-ions in the NVT ensemble with Bayesian optimization. If successfull, this means one can optimize mixing parameters in the NVT ensemble, to obtain a better model description of bilayers containing LA6.
     3. After optimization, test transferability of optimized parameters on the LPS-Re model system with Ca$^{2+}$ in the NVT ensemble. If the results improve concordance with AA-simulations, it means that optimized parameters can be applied to chemically similar model systems.
 
+### HyMD-elec-GPE Protocle
 <d href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
   <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/elec-HyMD-kopi.png"?raw=true" width="300" title="HyMD-protocole">
 </d>
 
-<d href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
+### Bayesian Optimization protocle
+<e href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
   <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/BO-flow-choice-kopi.png"?raw=true" width="300" title="HyMD-BO-protocole">
-</d>
+</e>
 
 
 ### Code: Link and description of programmes
