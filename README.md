@@ -3,7 +3,7 @@
 Hello there, and welcome to this Github-page, which is dedicated to the code relevant for thesis for the Degree M.sc. Computational Science: Physics. 
 
 
-![alt text](/assets/membrane-la6-ua-ref-kopi.pdf)
+![alt text](/assets/bilayer-full-v3.pdf.pdf)
 
 
 ### Main overview:
