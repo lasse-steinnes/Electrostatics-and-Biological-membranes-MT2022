@@ -13,11 +13,11 @@ Hello there, and welcome to this Github-page, which is dedicated to the code rel
 * The Hylleraas platform is associated with the [Hylleraas Centre for Quantum Molecular Sciences](https://www.mn.uio.no/hylleraas/english/). It implements the Hamiltonian formalism of the hybrid particle-field, and is a software applied to simulate coarse-grained models of softmatter systems in the canonical and isothermal–isobaric (in-preparation) ensembles. HyMD uses [PMESH](https://github.com/rainwoodman/pmesh) backend with fast fourier transforms for parallel architectures.
 
 <b href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
-  <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/LA6-cg-mapping-pic-kopi.png?raw=true" width="300" title="Coarse-graining2">
+  <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/LA6-cg-mapping-pic-kopi.png?raw=true" width="300" title="Lipid A hexa">
 </b>
 
 <b href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
-  <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/L-re5-cg-mapping-la6built-pic-kopi.png?raw=true" width="300" title="Coarse-graining">
+  <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/L-re5-cg-mapping-la6built-pic-kopi.png?raw=true" width="300" title="Lipid Re penta">
 </b>
 
 
