@@ -55,12 +55,12 @@ My contributions can be summarized as follows:
 ### Code: Link and description of programmes
 
 ### Protocols: 
-#### HyMD-elec-GPE Protocole
+#### HyMD-elec-GPE protocol
 <d href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
   <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/elec-HyMD-kopi.png"?raw=true" width="300" title="HyMD-protocole">
 </d>
 
-#### Bayesian Optimization protocle
+#### Bayesian Optimization protocol
 <e href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
   <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/BO-flow-choice-kopi.png"?raw=true" width="300" title="HyMD-BO-protocole">
 </e>
