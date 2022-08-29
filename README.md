@@ -21,9 +21,9 @@ Hello there, and welcome to this Github-page, which is dedicated to the code rel
   <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/L-re5-cg-mapping-la6built-pic-kopi.png?raw=true" width="300" title="Lipid Re penta">
 </b>
 
-<b href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
+<d href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
   <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/la6-GPE-BO-all-kopi.png?raw=true" width="300" title="LA6-sim-example">
-</b>
+</d>
 
 ### Thesis Abstract
 > I develop and apply an iterative method to solve a general Poisson equation in Fourier space, with a variable dielectric. The iterative method is implemented in the molecular dynamics software HylleraasMD, using the Hamiltonian hPF formalism.
