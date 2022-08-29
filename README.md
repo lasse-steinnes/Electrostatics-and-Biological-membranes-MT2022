@@ -23,7 +23,26 @@ Hello there, and welcome to this Github-page, which is dedicated to the code rel
 
 ### Summary of contributions
 My contributions can be summarized as follows:
+A detailed overview of my contribution is given below.
+- 
+  1. init: Sets up member parameters and vectors by calling the superclass method initialize from finitediffs.cpp.
+  2. set_initial: Initializes the solution vector u_n with zero everywhere, except at the boundaries. The boundaries are set to u_n(0) = 0 and u_n(Nx) = 1. 
+  3. advance: Moving the system to a new moment in time and calculates the new solution vector u, except at the boundaries which are fixed during the entire       simulation.
+  4. solve: Advances the system multiple moments in time by calling the method advance Nt times. For every advancement the corresponding solutions are written to file.
+  5. The other methods provided are write to file methods.
 
+- Development in HyMD and validation
+    1. Develop an iterative method to solve a general Poisson equation (GPE) in Fourier Space in the HylleraasMD software.
+    2. Validate the iterative method, and the HyMD implementation, against known cases, which include
+    \begin{enumerate}
+        - Solving a GPE with a Gaussian electrostatic potential, and test stability of convergence for different sets of method parameters.
+        - Validating the Coulomb interaction between oppositely charged ideal ions.
+        - Reproducing the partition of ions in a biphase of oil and water, with 5mM concentration.
+
+- Application on LA6 and lipid Re model systems with divalent cations
+    1. Compare variable dielectric results from simulations of biological model systems to constant dielectric simulations in the NVT ensemble. If the results with a variable dielectric corresponds better with the AA reference compared to a constant dielectric, there is a qualitative advantage to the new addition to the code. Specifically, it might indicate that a variable dielectric is necessary to reproduce the behaviour of electrochemically anistropic systems in coarse grain simulations.
+    2. Optimize Flory Huggins mixing parameters for LA6 with Ca$^{2+}$ in the NVT ensemble with Bayesian optimization. If successfull, this means one can optimize mixing parameters in the NVT ensemble, to obtain a better model description of bilayers containing LA6.
+    3. After optimization, test transferability of optimized parameters on the LPS-Re model system with Ca$^{2+}$ in the NVT ensemble. If the results improve concordance with AA-simulations, it means that optimized parameters can be applied to chemically similar model systems.
 
 ### Code: Link and description of programmes
 
