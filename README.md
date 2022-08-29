@@ -49,10 +49,8 @@ My contributions can be summarized as follows:
     3. After optimization, test transferability of optimized parameters on the LPS-Re model system with Ca$^{2+}$ in the NVT ensemble. If the results improve concordance with AA-simulations, it means that optimized parameters can be applied to chemically similar model systems.
 
 <c href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
-  <img src=https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/elec-HyMD-kopi.png"?raw=true" width="300" title="HyMD-protocole">
+  <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/elec-HyMD-kopi.png"?raw=true" width="300" title="HyMD-protocole">
 </c>
-
-
 
 ### Code: Link and description of programmes
 
