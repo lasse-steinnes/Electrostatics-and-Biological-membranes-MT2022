@@ -1,6 +1,6 @@
 # Simulation and analysis of biomolecular model systems with HyMD
 
-Hello there, and welcome to this Github-page, which is dedicated to the code relevant for my thesis, completing the degree M.sc. Computational Science: Physics (2020-2022).
+Hello there, and welcome to this Github-page, which is dedicated to the code relevant for my thesis, completing the degree M.sc. Computational Science: Physics (2020-2022). The title of my thesis is: *Electrostatics in Mesoscale Simulations of Biological Membranes using the Hybrid-Particle Field Approach*.
 
 <a href="https://cascella-group-uio.github.io/HyMD/">
   <img src="https://github.com/Cascella-Group-UiO/HyMD/blob/main/docs/img/hymd_logo_text_black.png?raw=true" width="500" title="HylleraasMD">
