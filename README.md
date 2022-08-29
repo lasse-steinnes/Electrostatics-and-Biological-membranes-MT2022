@@ -16,9 +16,9 @@ Hello there, and welcome to this Github-page, which is dedicated to the code rel
   <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/LA6-cg-mapping-pic-kopi.png?raw=true" width="300" title="Coarse-graining2">
 </b>
 
-<c href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
+<b href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
   <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/L-re5-cg-mapping-la6built-pic-kopi.png?raw=true" width="300" title="Coarse-graining">
-</c>
+</b>
 
 
 ### Thesis Abstract
