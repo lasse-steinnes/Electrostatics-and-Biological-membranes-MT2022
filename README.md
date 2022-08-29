@@ -23,13 +23,6 @@ Hello there, and welcome to this Github-page, which is dedicated to the code rel
 
 ### Summary of contributions
 My contributions can be summarized as follows:
-A detailed overview of my contribution is given below.
-- 
-  1. init: Sets up member parameters and vectors by calling the superclass method initialize from finitediffs.cpp.
-  2. set_initial: Initializes the solution vector u_n with zero everywhere, except at the boundaries. The boundaries are set to u_n(0) = 0 and u_n(Nx) = 1. 
-  3. advance: Moving the system to a new moment in time and calculates the new solution vector u, except at the boundaries which are fixed during the entire       simulation.
-  4. solve: Advances the system multiple moments in time by calling the method advance Nt times. For every advancement the corresponding solutions are written to file.
-  5. The other methods provided are write to file methods.
 
 - Development in HyMD and validation
     1. Develop an iterative method to solve a general Poisson equation (GPE) in Fourier Space in the HylleraasMD software.
