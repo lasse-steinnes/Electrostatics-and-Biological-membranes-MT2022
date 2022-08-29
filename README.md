@@ -49,7 +49,7 @@ My contributions can be summarized as follows:
 - Application on LA6 and lipid Re model systems with divalent cations
     1. Compare variable dielectric results from simulations of biological model systems to constant dielectric simulations in the NVT ensemble. If the results with a variable dielectric corresponds better with the AA reference compared to a constant dielectric, there is a qualitative advantage to the new addition to the code. Specifically, it might indicate that a variable dielectric is necessary to reproduce the behaviour of electrochemically anistropic systems in coarse grain simulations.
     2. Optimize Flory Huggins mixing parameters for LA6 with divalent counter-ions in the NVT ensemble with Bayesian optimization. If successfull, this means one can optimize mixing parameters in the NVT ensemble, to obtain a better model description of bilayers containing LA6.
-    3. After optimization, test transferability of optimized parameters on the LPS-Re model system with Ca$^{2+}$ in the NVT ensemble. If the results improve concordance with AA-simulations, it means that optimized parameters can be applied to chemically similar model systems.
+    3. After optimization, test transferability of optimized parameters on the LPS-Re model system with divalent cations in the NVT ensemble. If the results improve concordance with AA-simulations, it means that optimized parameters can be applied to chemically similar model systems.
 
 
 ### Code: Link and description of programmes
