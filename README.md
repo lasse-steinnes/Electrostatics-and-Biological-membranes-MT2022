@@ -11,6 +11,12 @@ Hello there, and welcome to this Github-page, which is dedicated to the code rel
   <img src="https://github.com/Cascella-Group-UiO/HyMD/blob/main/docs/img/hymd_logo_text_black.png?raw=true" width="500" title="HylleraasMD">
 </a>
 
+<a href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
+  <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/LA6-cg-mapping-pic.pdf?raw=true" width="500" title="HylleraasMD">
+</a>
+
+
+
 ### Thesis Abstract
 > I develop and apply an iterative method to solve a general Poisson equation in Fourier space, with a variable dielectric. The iterative method is implemented in the molecular dynamics software HylleraasMD, using the Hamiltonian hPF formalism.
 
