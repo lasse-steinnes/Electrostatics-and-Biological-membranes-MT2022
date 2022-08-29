@@ -8,7 +8,7 @@ Hello there, and welcome to this Github-page, which is dedicated to the code rel
 </a>
 
 
-### Main overview:
+### Main overview
 * This repository contains programmes used in the simulation and analysis of biological model systems of Lipid A hexa (LA6) and Lipid Re penta (LPS Re), which is both chemical components  of the outer membrane lipopolysaccharides in gram negative (GN) bacteria. LA6 is responsible for triggering host immune response, and the LPS is also known to make GN bacteria resistant to antimicrobial drugs. The LPS OM is reliant on a fine balanse between hydration and  stabilization of counter-ions to remain in a stable lamellar structure.
 * Here, I develop an iterative method for solving a general Poisson equation in the HylleraasMD ([HyMD](https://github.com/Cascella-Group-UiO/HyMD)) molecular dynamics platform. 
 * The Hylleraas platform is associated with the [Hylleraas Centre for Quantum Molecular Sciences](https://www.mn.uio.no/hylleraas/english/). It implements the Hamiltonian formalism of the hybrid particle-field, and is a software applied to simulate coarse-grained models of softmatter systems in the canonical and isothermal–isobaric (in-preparation) ensembles. HyMD uses [PMESH](https://github.com/rainwoodman/pmesh) backend with fast fourier transforms for parallel architectures.
@@ -53,8 +53,9 @@ My contributions can be summarized as follows:
 
 
 ### Code: Link and description of programmes
+Write here
 
-### Protocols: 
+### Protocols
 #### HyMD-elec-GPE protocol
 <d href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
   <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/elec-HyMD-kopi.png"?raw=true" width="300" title="HyMD-protocole">
