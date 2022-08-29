@@ -12,7 +12,7 @@ Hello there, and welcome to this Github-page, which is dedicated to the code rel
 </a>
 
 <b href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
-  <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/LA6-cg-mapping-pic.pdf?raw=true" width="500" title="Coarse-graining">
+  <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/L-re5-cg-mapping-la6built-pic-kopi.png?raw=true" width="500" title="Coarse-graining">
 </b>
 
 
