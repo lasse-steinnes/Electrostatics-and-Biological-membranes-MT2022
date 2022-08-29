@@ -65,7 +65,5 @@ My contributions can be summarized as follows:
   <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/BO-flow-choice-kopi.png"?raw=true" width="300" title="HyMD-BO-protocole">
 </e>
 
-### Links and packages
-
 
 
