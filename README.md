@@ -22,7 +22,7 @@ Hello there, and welcome to this Github-page, which is dedicated to the code rel
 </b>
 
 <b href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
-  <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/la6-GPE-BO-all-kopi.png?raw=true" width="300" title="LA6-sim-example">
+  <img src="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/assets/la6-GPE-BO-all-kopi.png?raw=true" width="500" title="LA6-sim-example">
 </b>
 
 ### Thesis Abstract
