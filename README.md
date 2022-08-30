@@ -71,6 +71,7 @@ My contributions can be summarized as follows:
 
 - [example-trajectory-log-files](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/example-trajectory-log-files) : Some log files, which gives information on the toml-input and prompts of several parameters during trajectory runs. 
 
+- [fitness-script-and-data](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/fitness-script-and-data) : Folders with fitness data for [LA6](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/fitness-script-and-data/LA6) and [LPS Re](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/fitness-script-and-data/LPS-Re), and the script used to obtain fitness data and density profiles 1) LA6 [hymd_optimize.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/fitness-script-and-data/LA6/hymd_optimize.py) 2) LPS Re [hymd_optimize.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/fitness-script-and-data/LPS-Re/hymd_optimize.py)
   
 ### Protocols
 #### HyMD-elec-GPE protocol
