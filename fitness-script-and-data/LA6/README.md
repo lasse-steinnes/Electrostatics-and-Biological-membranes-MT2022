@@ -27,13 +27,11 @@ python3 hymd_optimize.py plot --traj aa-traj.xtc --top frame90ns.gro --skip-firs
 ```
 
 ## Testing fitness
-### fitness w/o area-per-lipid from 10 first frames of simulation
+
 ```bash == python3 hymd_optimize.py fitness --traj sim-la-alias.H5 --top lipid-A-hexa-feb-2022.h5 --skip-first 5 --frames 10 --axis 2  --ref-traj aa-traj.xtc --ref-top frame90ns.gro --skip-first-ref 0  --axis-ref 2 --resolution types  --bins 100 --no-marker --out fitness_test.txt --range 8 --symmetrize --force
 ```
 
-
 Output from python3 hymd_optimize.py -h:
-
 
 usage: hymd_optimize.py [-h] [--out file name] [--no-show] [--save-plot] [--force] [--one-side] [--xlim XLIM XLIM] [--ylim YLIM YLIM] [--ref-traj REF_TRAJ] [--ref-top REF_TOP] [--traj TRAJ] [--top TOP] [--bins BINS] [--density] [--symmetrize] [--range RANGE] [--area-per-lipid]
                         [--axis {0,1,2}] [--axis-ref {0,1,2}] [--ignore IGNORE [IGNORE ...]] [--resolution {types,names}] [--remove-xlabel] [--remove-ylabel] [--remove-yticks] [--remove-xticks] [--remove-legend] [--tight] [--no-marker] [--skip SKIP] [--skip-first SKIP_FIRST]
@@ -117,14 +115,7 @@ Test on reduced systems
  python3 hymd_optimize.py plot --traj sim-la-alias.H5 --top lipid-A-hexa-feb-2022.h5 --skip-first 0 --frames 400 --resolution types --bins 100 --no-marker --range 8 --ignore "all" "solvent" "name:.*" "lipid:.*" "ions"  --symmetrize
 
 
- ##############     Testing the cropped frames  (hopefully final versions)        ###########
- fitness:
- python3 hymd_optimize.py fitness --traj sim-la-cropped.H5 --top lipid-A-hexa-feb-2022-reduced-box.H5 --skip-first 25 --axis 2  --ref-traj aa-traj.xtc --ref-top frame90ns.gro --skip-first-ref 0  --axis-ref 2 --resolution types  --bins 100 --no-marker --out fitness_test.txt --range 8 --symmetrize --force --surface-tension --area-per-lipid
-
-plot:
-python3 hymd_optimize.py plot --traj sim-la-cropped.H5 --top lipid-A-hexa-feb-2022-reduced-box.h5 --skip-first 5 --resolution types --bins 100 --no-marker --range 9.39 --ignore "all" "solvent" "name:.*" "lipid:.*" "ions"  --symmetrize
-
-python3 hymd_optimize.py plot --traj la6-eps15.H5 --top lipid-A-hexa-feb-2022-reduced-box.h5 --skip-first 5 --resolution types --bins 100 --no-marker --range 9.39 --ignore "all" "solvent" "name:.*" "lipid:.*" "ions"  --symmetrize
+ ##############     To thesis     ###########
 
 Plots to thesis:
 python3 hymd_optimize.py plot --traj gpe-Flory-huggins.H5 --top lipid-A-hexa-feb-2022.h5 --skip-first 5 --resolution types --bins 100 --no-marker --range 9.39 --ignore "all" "solvent" "name:.*" "lipid:.*" "ions"  --symmetrize
@@ -140,25 +131,7 @@ python3 hymd_optimize.py plot --traj la6-PE-BO.H5 --top lipid-A-hexa-feb-2022.h5
 python3 hymd_optimize.py plot --traj la6-gpe-BO.H5 --top lipid-A-hexa-feb-2022.h5 --skip-first 5 --resolution types --bins 100 --no-marker --range 9.39 --ignore "all" "solvent" "name:.*" "lipid:.*" "ions"  --symmetrize
 
 python3 hymd_optimize.py plot --traj aa-traj.xtc --top frame90ns.gro --skip-first 0 --resolution types --bins 100 --no-marker --range 8 --ignore "all" "solvent" "name:.*" "lipid:.*" "ions"  --symmetrize
-
-
-fitness:
-python3 hymd_optimize.py fitness --traj sim-la-dt0-05.H5 --top lipid-A-hexa-feb-2022-reduced-box.H5 --skip-first 5 --axis 2  --ref-traj aa-traj.xtc --ref-top frame90ns.gro --skip-first-ref 0  --axis-ref 2 --resolution types  --bins 100 --no-marker --out fitness_test.txt --symmetrize --force --surface-tension --area-per-lipid
-
-fitness
-python3 hymd_optimize.py fitness --traj la-cal-pressure.H5 --top lipid-A-hexa-feb-2022-reduced-box.H5 --skip-first 25 --axis 2  --ref-traj aa-traj.xtc --ref-top frame90ns.gro --skip-first-ref 0  --axis-ref 2 --resolution types  --bins 100 --no-marker --out fitness_test.txt --range 8 --symmetrize --force --pressure --area-per-lipid --skip-ref 20
-
-python3 hymd_optimize.py fitness --traj la6-eps80.H5 --top lipid-A-hexa-feb-2022-reduced-box.H5 --skip-first 10 --axis 2  --ref-traj aa-traj.xtc --ref-top frame90ns.gro --skip-first-ref 0  --axis-ref 2 --resolution types  --bins 100 --no-marker --out fitness_test.txt --range 8 --symmetrize --force --area-per-lipid --skip-ref 20
-
-python3 hymd_optimize.py fitness --traj la6-eps15.H5 --top lipid-A-hexa-feb-2022-reduced-box.H5 --skip-first 10 --axis 2  --ref-traj aa-traj.xtc --ref-top frame90ns.gro --skip-first-ref 0  --axis-ref 2 --resolution types  --bins 100 --no-marker --out fitness_test.txt --range 8 --symmetrize --force --area-per-lipid --skip-ref 20
-
-python3 hymd_optimize.py fitness --traj sim-la-cropped.H5 --top lipid-A-hexa-feb-2022-reduced-box.H5 --skip-first 10 --axis 2  --ref-traj aa-traj.xtc --ref-top frame90ns.gro --skip-first-ref 0  --axis-ref 2 --resolution types  --bins 100 --no-marker --out fitness_test.txt --range 8 --symmetrize --force --area-per-lipid --skip-ref 20
-
-python3 hymd_optimize.py fitness --traj sim-best-GPE.H5 --top lipid-A-hexa-feb-2022-reduced-box.H5 --skip-first 10 --axis 2  --ref-traj aa-traj.xtc --ref-top frame90ns.gro --skip-first-ref 0  --axis-ref 2 --resolution types  --bins 100 --no-marker --out fitness_test.txt --range 8 --symmetrize --force --area-per-lipid --skip-ref 20
-
-python3 hymd_optimize.py fitness --traj random-opt-la6.H5 --top lipid-A-hexa-feb-2022-reduced-box.H5 --skip-first 10 --axis 2  --ref-traj aa-traj.xtc --ref-top frame90ns.gro --skip-first-ref 0  --axis-ref 2 --resolution types  --bins 100 --no-marker --out fitness_test.txt --range 8 --symmetrize --force --area-per-lipid --skip-ref 20
-
-python3 hymd_optimize.py fitness --traj gpe-Flory-huggins.H5 --top lipid-A-hexa-feb-2022.H5 --skip-first 10 --axis 2  --ref-traj aa-traj.xtc --ref-top frame90ns.gro --skip-first-ref 0  --axis-ref 2 --resolution types  --bins 100 --no-marker --out fitness_test.txt --range 8 --symmetrize --force --area-per-lipid --skip-ref 20
+-lipid --skip-ref 20
 
 fitness to thesis:
 python3 hymd_optimize.py fitness --traj gpe-Flory-huggins.H5 --top lipid-A-hexa-feb-2022.h5 --skip-first 5 --axis 2  --ref-traj aa-traj.xtc --ref-top frame90ns.gro --skip-first-ref 0  --axis-ref 2 --resolution types  --bins 100 --no-marker --out fitness-gpe-FH.txt --range 8 --symmetrize --force
