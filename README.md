@@ -80,8 +80,8 @@ My contributions can be summarized as follows:
   1. [LA6](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/input-HDF5-and-tomli/LA6)  and [LA6-cropped](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/input-HDF5-and-tomli/LA6-cropped)
   2. [LPS-Re](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/input-HDF5-and-tomli/LPS-Re) and [LPS-Re-cropped](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/input-HDF5-and-tomli/LPS-Re-cropped)
   3. [biphase](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/input-HDF5-and-tomli/biphase), 5mM electrolytic solution oil and water partition. 
-  4. [coulomb](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/input-HDF5-and-tomli/coulomb)
-  5. [water-ions](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/input-HDF5-and-tomli/water-ions), 150mM electrolytic solution with only water as solvent. 
+  4. [coulomb](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/input-HDF5-and-tomli/coulomb), two oppositely charged CG beads. With water, but tomli is set so that water beads have no effect on charged beads (kappa high and interaction parameter 0). Having water in the system opens to for further investigation of behaviour with varying dielectric.
+  5. [water-ions](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/input-HDF5-and-tomli/water-ions), 150mM electrolytic solution with only water as solvent. (Extra system).
   
 - [job-scripts-examples](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/job-scripts-examples) : Relevant job script examples from (Saga)[https://documentation.sigma2.no/hpc_machines/saga.html] and (Betzy)[https://documentation.sigma2.no/hpc_machines/betzy.html] clusters at the high performance computing facility maintained by [the Norwegian Research Infrastructure Services](https://documentation.sigma2.no/index.html). 
 
@@ -89,7 +89,7 @@ My contributions can be summarized as follows:
   1. For [LA6](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/mapping-and-gro-to-h5/bilayer-details) and [LPS Re](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/mapping-and-gro-to-h5/bilayer-details) : From aa to coarse-grained representation, including transition from .gro to HDF5 input trajectory file. 
   2. [biphase](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/mapping-and-gro-to-h5/biphase) : PACKMOL and gro to HDF5
   3. [coulomb](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/mapping-and-gro-to-h5/coulomb) : PACKMOL and gro to HDF5
-  4. [ions-water](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/mapping-and-gro-to-h5/ions-water) : PACKMOL and gro to HDF5
+  4. [ions-water](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/mapping-and-gro-to-h5/ions-water) : PACKMOL and gro to HDF5. (Extra system)
   - The aa to CG mapping depends on a CG builder ([https://jbarnoud.github.io/cgbuilder/](https://jbarnoud.github.io/cgbuilder/)) as described in my thesis.
   - The step gro to HDF5 is possible with the files .gro .inp and .itp describing the configuration, and the utils function [gmx_2_hymd.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/HyMD-LS-cp/utils/gmx_2_hymd.py).
 
