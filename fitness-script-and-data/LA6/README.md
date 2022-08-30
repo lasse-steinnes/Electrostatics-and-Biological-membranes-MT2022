@@ -101,7 +101,8 @@ optional arguments:
 - If you give fitness instead of plot, it will instead of plotting the density profile,
   calculate the fitness
 
-  Experimenting with surface_tension:
+- pressure added as penalty:
+
  python3 hymd_optimize.py fitness --traj cal-la.H5 --top lipid-A-hexa-feb-2022-reduced-box.h5 --skip-first 0 --frames 20 --axis 2  --ref-traj aa-traj.xtc --ref-top frame90ns.gro --skip-first-ref 0  --axis-ref 2 --resolution types  --bins 100 --no-marker --out fitness_test.txt --range 8 --symmetrize --force --surface-tension
 
   python3 hymd_optimize.py fitness --traj sim-la-alias.H5 --top lipid-A-hexa-feb-2022.h5 --skip-first 0 --frames 400 --axis 2  --ref-traj aa-traj.xtc --ref-top frame90ns.gro --skip-first-ref 0  --axis-ref 2 --resolution types  --bins 100 --no-marker --out fitness_test.txt --range 8 --symmetrize --force --surface-tension --area-per-lipid
