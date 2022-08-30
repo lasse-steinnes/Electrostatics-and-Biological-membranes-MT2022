@@ -57,9 +57,13 @@ My contributions can be summarized as follows:
     3. After optimization, test transferability of optimized parameters on the LPS-Re model system with divalent cations in the NVT ensemble. If the results improve concordance with AA-simulations, it means that optimized parameters can be applied to chemically similar model systems.
 
 
-### Code: Link and description of programmes
-Write here
-
+### Code: Link and description of folders and programmes
+- [HyMD-LS-cp](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/HyMD-LS-cp) : This is my version of HyMD, where I implement the iterative GPE solver. My contributions are mainly in the folder hymd
+  1. [main.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/HyMD-LS-cp/hymd/main.py) : Runs the MD integrations with or without variable dielectric electrostatics, depending on toml input specications.
+  2. [field.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/HyMD-LS-cp/hymd/field.py) : Defines forces and energy functions on grid with more. 
+  3. [input_parser.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/HyMD-LS-cp/hymd/input_parser.py) :  Reads off the input tomli file and check that correct/needed input is given correctly.
+  4. [file_io.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/HyMD-LS-cp/hymd/file_io.py) : File input and output. Stores static and dynamic variables to HDF5 trajectory file.
+  
 ### Protocols
 #### HyMD-elec-GPE protocol
 <d href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
