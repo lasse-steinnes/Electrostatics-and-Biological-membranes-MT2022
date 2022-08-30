@@ -93,7 +93,7 @@ optional arguments:
   --vmd-colors, --vmdcolors, -vmdcolors
                         use the same colors for beads as default in vmd
 
-Notes:
+## Notes:
 - test refers to the h5
   - inputfile is topology
   - traj  is the simulation h5
@@ -106,10 +106,8 @@ Notes:
 
   python3 hymd_optimize.py fitness --traj sim-la-alias.H5 --top lipid-A-hexa-feb-2022.h5 --skip-first 0 --frames 400 --axis 2  --ref-traj aa-traj.xtc --ref-top frame90ns.gro --skip-first-ref 0  --axis-ref 2 --resolution types  --bins 100 --no-marker --out fitness_test.txt --range 8 --symmetrize --force --surface-tension --area-per-lipid
 
-Test on reduced systems
- python3 hymd_optimize.py fitness --traj sim-la-914.H5 --top lipid-A-hexa-smaller-system-23march-area-91-4.H5 --skip-first 80 --axis 2  --ref-traj aa-traj.xtc --ref-top frame90ns.gro --skip-first-ref 0  --axis-ref 2 --resolution types  --bins 100 --no-marker --out fitness_test.txt --range 8 --symmetrize --force --surface-tension
 
- #####   Plotting the density profiles ######
+ ##  Plotting the density profiles examples
  python3 hymd_optimize.py plot --traj sim-la-914.H5 --top lipid-A-hexa-smaller-system-23march-area-91-4.H5 --skip-first 0 --resolution types --bins 100 --no-marker --range 8 --ignore "all" "solvent" "name:.*" "lipid:.*" "ions"  --symmetrize
 
  python3 hymd_optimize.py plot --traj sim-la-alias.H5 --top lipid-A-hexa-feb-2022.h5 --skip-first 0 --frames 400 --resolution types --bins 100 --no-marker --range 8 --ignore "all" "solvent" "name:.*" "lipid:.*" "ions"  --symmetrize
