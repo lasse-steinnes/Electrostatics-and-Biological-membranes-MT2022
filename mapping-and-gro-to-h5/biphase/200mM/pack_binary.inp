@@ -1,0 +1,33 @@
+
+filetype pdb
+output partition200mM.pdb
+
+tolerance 1.0
+structure C.pdb
+  number 27600
+  inside box 0. 0. 0. 149. 149. 149.
+  radius 1.0
+end structure
+
+tolerance 1.0
+structure W.pdb
+  number 27600
+  inside box 149. 0. 0. 298. 149. 149.
+  radius 1.0
+end structure
+
+
+tolerance 1.0
+structure A.pdb
+  number 800
+  inside box 0. 0. 0. 298. 149. 149.
+  radius 1.0
+end structure
+
+
+tolerance 1.0
+structure B.pdb
+  number 800
+  inside box 0. 0. 0. 298. 149. 149.
+  radius 1.0
+end structure

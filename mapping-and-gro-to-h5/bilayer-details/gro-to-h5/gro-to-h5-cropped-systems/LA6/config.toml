@@ -1,0 +1,147 @@
+[meta]
+# Name of the simulation. May be ommitted.
+name = "Lipid A with ML interaction parameters"
+# Tags classifying the simulation. May be ommitted.
+tags = ["bilayer", "solvent", "Lipid A"]
+
+[particles]
+# Number of total particles in the simulation. If an input .hdf5 format file is
+# specified, the number of particles will be inferred from this and *may* be
+# ommited.
+n_particles = 16980
+# Number of beads per lipid A is 28
+# Mass of the particles in [g/mol]. All masses are assumed equal.
+mass = 72.0
+# Maximum number of particles per molecules present in the system. A default of
+# 200 is assumed, and this keyword may be ommitted for any system with smaller
+# molecules.
+max_molecule_size = 15 # ask ?
+
+[simulation]
+# Number of total time steps in the simulation in [picoseconds].
+n_steps = 500 #25000
+# Frequency of trajectory/energy file output in time steps.
+n_print = 20 #100 ##5000
+# Frequency of requesting that the HDF5 library flush the file output buffers
+# to disk after in number of n_print timesteps.
+n_flush = 1 #(50 ##5000) ## saving every 20th step
+# Time step used in the simulation in [picoseconds].
+time_step = 0.3
+# Simulation box size in [nanometers].
+box_size = [13.0, 13.0, 14.0]
+# Time integrator used in the simulation. Either "velocity-verlet" or "respa".
+# If "respa", specify also the number of small rRESPA time steps per large
+# time_step with the 'respa_inner' keyword.
+integrator = "respa"
+respa_inner = 10
+# Perform MPI rank domain decomposition every x time steps to (hopefully)
+# reduce the amount of neccessary communication between ranks in the pmesh
+# procedures. Ommit or set to 'false' or '0' to not perform any domain
+# decomposition.
+domain_decomposition = 10
+# Starting temperature to generate before simulation begins in [kelvin]. Ommit
+# or set to 'false' to not change the temperature before starting.
+start_temperature = 323
+# Target temperature used in the velocity rescale thermostat in [kelvin]. Ommit
+# or set to 'false' to use no thermostat, i.e. a constant energy simulation.
+target_temperature = 323
+# Thermostat collision frequency in [1/picoseconds].
+tau = 0.1
+# The energy functional W[phi] to use. Options:
+#    "SquaredPhi":      φ² / 2κφ₀,
+#    "DefaultNoChi":   (φ - φ₀)² / 2κφ₀
+#    "DefaultWithChi": (φ - φ₀)² / 2κφ₀ + Σ χφφ' / φ₀
+# Subclass Hamiltonian to create a new energy functional.
+hamiltonian = 'DefaultWithChi'
+
+###  Electrostatics
+# coulombtype, string - either 'PIC_Spectral_GPE' (variable dielectric)
+# or 'PIC_Spectral' (constant dielectric).
+# dielectric_const, float - needed for 'PIC_Spectral'
+# dielectric_type,  list - needed for 'PIC_Spectral_GPE'
+# optional params PIC_Spectral_GPE:
+# convergence_type, string - optional, defines convergence criteria
+#              options: 'euclidean_norm', 'csum', 'max_diff'
+# conv_crit, float - defines the convergence value for set convergence type.
+# pol_mixing, float - polarization mixing parameter [0.1,1],
+#                decides how much of polarization charge density are used in next iteration.
+# default: convergence_type = 'max_diff', conv_crit = 1-e6, pol_mixing = 0.6.
+coulombtype = 'PIC_Spectral_GPE' # algo type with charge and variable dielectric
+coulombtype = 'PIC_Spectral' # algo type w. charge only
+#dielectric_const = 80.0 # this should be done differently
+# Dielectric values can be given here as a list
+# dielectric_type (list)
+dielectric_type = [
+  [["C"], [5.0]],
+  [["W"], [80.0]],
+  [["N"], [80.0]],
+  [["P"], [80.0]],
+  [["G"], [80.0]],
+]
+
+#pol_mixing = 0.6
+#convergence_type = ''
+
+[field]
+# Particle-mesh grid size, either a single integer or an array of 3 integers
+# (number of grid points in each dimension). In order to guarantee consistency
+# and speed in the PFFT routines, the actual mesh grid will be changed to ensure
+# that each dimension of the 2d PFFT process grid divides each dimension of the
+# mesh grid size.
+mesh_size = [60,60,60]  # [24, 24, 24] #
+# Compressibility used in the relaxed incompressibility term of W(phi) in
+# [mol/kJ].
+kappa = 0.05
+# Standard deviation in the Gaussian filter (window function) in [nanometers].
+# This value is a characzteristic length scale for the size of the particles in
+# the simulation.
+sigma = 0.5
+# Interaction matrix, chi, ((atom name 1, atom name 2), (mixing energy in
+# [kJ/mol])).
+chi = [
+  ["L", "G", 4.5],
+  ["L", "C", 13.25],
+  ["G", "P", 4.5],
+  ["C", "W",  33.75],
+  ["P", "C", 20.0],
+  ["P", "W", -3.6],
+  ["CA", "P", -7.2],
+  ["CA", "C", 13.25],
+  ["G", "C", 8.3],
+  ["G", "W", 4.5],
+]
+# L  - carboxyl/hydroxyl
+# G - ester, amides
+# C - carbon (chain)
+# P - phosphate
+# CA - ion (ca2+ ion)
+# W - water
+
+[bonds]
+# Two-particle bonds, ((atom name 1, atom name 2), (equilibrium length in
+# [nanometers], bond strenght in [kJ/mol])). Note the two
+bonds = [
+  ["L","P", 0.47, 1250.0], # linked through carbons - assume the same
+  ["L", "G", 0.47, 1250.0],
+  ["L", "C", 0.47, 1250.0],
+  ["P", "G", 0.47, 1250.0],
+  ["G", "G", 0.47, 1000.0],
+  ["G", "C", 0.47, 1250.0],
+  ["C", "C", 0.47, 1250.0],
+]
+# Three-particle angular bonds, ((atom name 1, atom name 2, atom name 3),
+# (equilibrium angle in [degrees], bond strenght in [kJ/mol])).
+angle_bonds = [
+  ["P", "G", "G", 120.0, 25.0],
+  ["P", "L", "G", 120.0, 25.0], # wether L or G configuration should be the same?
+  ["G", "C", "C", 180.0, 25.0],
+  ["C", "C", "C", 180.0, 25.0],
+  ["L", "C", "C", 180.0, 25.0],
+  ["G", "G", "G", 120.0, 850.0],
+  ["L", "G", "G", 120.0, 25.0], # since L bead in ring, does the bond strength change?
+# added 2 P angles, and G-C-C angles compared to antonio Lipid
+# 2 P-L-G, (added in total 3 new angles)
+  # might need 240 angle (120 + 120) for P-L-G and P - L -G differentiation
+]
+
+# angle type <-- ?

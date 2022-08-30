@@ -1,0 +1,15 @@
+#include "C.itp"
+#include "W.itp"
+#include "A.itp"
+#include "B.itp"
+
+[ system ]
+; name
+CWAB
+
+[ molecules ]
+; name  number
+C           27600 
+W           27600
+A           400 
+B           400 

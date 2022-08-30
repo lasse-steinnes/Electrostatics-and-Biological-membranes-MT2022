@@ -1,0 +1,7 @@
+[ moleculetype ]
+; molname   nrexcl
+  C
+
+[ atoms ]
+;id     type    resnr   residu  atom    cgnr    charge    mass 
+     1    C    1    OIL     C      1        0.0     72.0 ; 

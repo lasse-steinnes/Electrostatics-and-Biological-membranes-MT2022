@@ -1,0 +1,7 @@
+TITLE     typeB bead
+REMARK    THIS IS A SIMULATION BOX
+CRYST1    6.000    6.000    6.000  90.00  90.00  90.00 P 1           1
+MODEL        1
+ATOM      1  B    OL     1       0.000   0.000   0.000  1.00  0.00            
+TER
+ENDMDL

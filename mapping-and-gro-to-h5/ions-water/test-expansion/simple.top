@@ -1,0 +1,13 @@
+#include "W.itp"
+#include "A.itp"
+#include "B.itp"
+
+[ system ]
+; name
+WAB
+
+[ molecules ]
+; name  number
+W           55200
+A           1925
+B           1925

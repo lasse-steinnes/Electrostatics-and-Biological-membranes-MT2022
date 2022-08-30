@@ -1,0 +1,8 @@
+[ Steps ]
+
+- Created cgbuilder.ndx through this website: https://jbarnoud.github.io/cgbuilder/
+- Generate an executable for the first fortran code: gfortran functions.f90 mapping.f90 -o map-lipidA
+- Run it (it will generate the new.ndx file - mapping of all 256 lipids): ./map-lipidA
+- Generate an executable for the second fortran code: gfortran w-ions.f90 -o w-ions
+- Run it (it will generate the vai.ndx file - mapping of water molecules and ions): ./w-ions
+- Concatenate both ndx files: cat new.ndx vai.ndx > new2.ndx

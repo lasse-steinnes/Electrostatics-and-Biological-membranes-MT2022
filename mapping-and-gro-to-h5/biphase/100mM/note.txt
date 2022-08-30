@@ -1,0 +1,18 @@
+
+1, generate coordinates configuration via packmol
+
+prepare all the input pdb files
+modify inp accordingly
+run via command:
+  packmol < pack_binary.inp
+
+pdb files made by packmol.
+inp files made by hand
+
+obtain partition200nM.pdb ; convert to gro file via VMD
+partition200nM.gro (edit the last line to be the correct box size, i.e., 29.8 14.9, 14.9)
+
+2, config.toml
+- change so that it fits the partition system we are looking at
+
+3, gro to h5

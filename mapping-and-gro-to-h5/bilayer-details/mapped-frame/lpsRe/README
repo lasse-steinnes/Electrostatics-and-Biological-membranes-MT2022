@@ -1,0 +1,5 @@
+Directory created by Manuela Nader on March of 2022
+
+[ contents ]
+- frame90ns.pdb and frame90ns.gro - configuration of 90 ns frame of mapped aa simulation of LPS Re bilayer, both in gro and pdb format
+- aa-traj.xtc and aa-traj.pdb - mapped trajetory of last 10 ns of a 100 ns simulation of LPS Re bilayer, both in xtc and pdb format
