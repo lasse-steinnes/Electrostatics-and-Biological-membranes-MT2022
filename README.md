@@ -71,8 +71,27 @@ My contributions can be summarized as follows:
 
 - [example-trajectory-log-files](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/example-trajectory-log-files) : Some log files, which gives information on the toml-input and prompts of several parameters during trajectory runs. 
 
-- [fitness-script-and-data](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/fitness-script-and-data) : Folders with fitness data for [LA6](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/fitness-script-and-data/LA6) and [LPS Re](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/fitness-script-and-data/LPS-Re), and the script used to obtain fitness data and density profiles 1) LA6 [hymd_optimize.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/fitness-script-and-data/LA6/hymd_optimize.py) 2) LPS Re [hymd_optimize.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/fitness-script-and-data/LPS-Re/hymd_optimize.py)
+- [fitness-script-and-data](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/fitness-script-and-data) : Folder with fitness data for [LA6](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/fitness-script-and-data/LA6) and [LPS Re](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/fitness-script-and-data/LPS-Re), and the script used to obtain fitness data and density profiles 1) LA6 [hymd_optimize.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/fitness-script-and-data/LA6/hymd_optimize.py) 2) LPS Re [hymd_optimize.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/fitness-script-and-data/LPS-Re/hymd_optimize.py)
   
+- [input-HDF5-and-tomli](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/input-HDF5-and-tomli): Input trajectory HDF5/H5 and input toml/tomli scripts for various systems:
+  1. [LA6](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/input-HDF5-and-tomli/LA6)  and [LA6-cropped](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/input-HDF5-and-tomli/LA6-cropped)
+  2. [LPS-Re](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/input-HDF5-and-tomli/LPS-Re) and [LPS-Re-cropped](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/input-HDF5-and-tomli/LPS-Re-cropped)
+  3. [biphase](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/input-HDF5-and-tomli/biphase), 5mM electrolytic solution oil and water partition. 
+  4. [coulomb](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/input-HDF5-and-tomli/coulomb)
+  5. [water-ions](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/input-HDF5-and-tomli/water-ions), 150mM electrolytic solution with only water as solvent. 
+  
+- [job-scripts-examples](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/job-scripts-examples) : Relevant job script examples from (Saga)[https://documentation.sigma2.no/hpc_machines/saga.html] and (Betzy)[https://documentation.sigma2.no/hpc_machines/betzy.html] clusters at the high performance computing facility maintained by [the Norwegian Research Infrastructure Services](https://documentation.sigma2.no/index.html). 
+
+- [mapping-and-gro-to-h5](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/mapping-and-gro-to-h5) : Mapping and scripts to build input trajectory files.  
+  1. For [LA6](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/mapping-and-gro-to-h5/bilayer-details) and [LPS Re](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/mapping-and-gro-to-h5/bilayer-details) : From aa to coarse-grained representation, including transition from .gro to HDF5 input trajectory file. 
+  2. [biphase](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/mapping-and-gro-to-h5/biphase)
+  3. [coulomb](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/mapping-and-gro-to-h5/coulomb)
+  4. [ions-water](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/mapping-and-gro-to-h5/ions-water)
+  
+  
+  
+
+
 ### Protocols
 #### HyMD-elec-GPE protocol
 <d href="https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/">
