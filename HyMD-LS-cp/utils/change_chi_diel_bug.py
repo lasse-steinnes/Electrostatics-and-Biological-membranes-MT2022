@@ -28,17 +28,26 @@ def parse_and_change_config_chi(config_file_path, parser, out=None):
     with open(config_file_path, "r") as in_file:
         contents = in_file.readlines()
     chi_re = re.compile(r"^\s*chi\s*=\s*\[\s*")
+    per_re = re.compile(r"^\s*dielectric_type\s*=\s*\[\s*")
 
     chi_start_line = None
+    per_start_line = None
     for i, line in enumerate(contents):
         chi_match = re.match(chi_re, line)
+        per_match = re.match(per_re, line)
         if chi_match is not None:
             chi_start_line = i
-            break
-
+            if per_start_line is not None:
+                break
+        if per_match is not None:
+            per_start_line = i
+            if chi_start_line is not None:
+                break
+    
     chi_end_line = None
     left_brackets = 0
     right_brackets = 0
+    
     for i, line in enumerate(contents[chi_start_line:]):
         for j, char in enumerate(line):
             if char == "[":
@@ -52,37 +61,75 @@ def parse_and_change_config_chi(config_file_path, parser, out=None):
         if chi_end_line is not None:
             break
 
+    per_end_line = None
+    left_brackets = 0
+    right_brackets = 0
+    for i, line in enumerate(contents[per_start_line:]):
+        for j, char in enumerate(line):
+            if char == "[":
+                left_brackets += 1
+            elif char == "]":
+                right_brackets += 1
+            if left_brackets > 0:
+                if left_brackets == right_brackets:
+                    per_end_line = per_start_line + i
+                    break
+        if per_end_line is not None:
+            break
+        
     chi_arg_re = re.compile(r"[A-Z,a-z]+,[A-Z,a-z]+")
     chi_args = []
     for arg, value in vars(parser).items():
         if value is not None:
             if re.fullmatch(chi_arg_re, arg):
                 a, b = arg.split(",")
-                re_str = (
-                    f'\[\s*"{a}"\s*,\s*"{b}"\s*,'  # noqa: W605
-                    f'\s*[\+-]?\d+\.\d*\s*\]'  # noqa: W605
-                )
-                re_str_r = (
-                    f'\[\s*"{b}"\s*,\s*"{a}"\s*,'  # noqa: W605
-                    f'\s*[\+-]?\d+\.\d*\s*\]'  # noqa: W605
-                )
-                chi_matrix_re = re.compile(re_str)
-                chi_matrix_re_r = re.compile(re_str_r)
-                chi_args.append([(a, b), chi_matrix_re, value])
-                chi_args.append([(a, b), chi_matrix_re_r, value])
-
+                if a != b :
+                    re_str = (
+                        f'\[\s*"{a}"\s*,\s*"{b}"\s*,'  # noqa: W605
+                        f'\s*[\+-]?\d+\.\d*\s*\]'  # noqa: W605
+                    )
+                    re_str_r = (
+                        f'\[\s*"{b}"\s*,\s*"{a}"\s*,'  # noqa: W605
+                        f'\s*[\+-]?\d+\.\d*\s*\]'  # noqa: W605
+                    )
+                    chi_matrix_re = re.compile(re_str)
+                    chi_matrix_re_r = re.compile(re_str_r)
+                    chi_args.append([(a, b), chi_matrix_re, value])
+                    chi_args.append([(a, b), chi_matrix_re_r, value])
+                    
+    per_arg_re = re.compile(r"[A-Z,a-z]+,[A-Z,a-z]+")
+    per_args = []
+    for arg, value in vars(parser).items():
+        if value is not None:
+            if re.fullmatch(per_arg_re, arg):
+                a, b = arg.split(",")
+                if a == b :
+                    re_str = (
+                        f'\[\s*\[\s*"{a}"\s*\]\s*,' # noqa: W605                                  
+                        f'\s*\[\s*[\+-]?\d+\.\d*\s*\]\s*\]'  # noqa: W605                         
+                    )
+                    per_re = re.compile(re_str)
+                    per_args.append([a, per_re, value])
+                
     for i, line in enumerate(contents[chi_start_line:chi_end_line+1]):
         replaced_line = line
-        #print(replaced_line)
         for (a, b), pattern, chi_value in chi_args:
-            #print(f'["{a}", "{b}", {chi_value}]')
             replaced_line = re.sub(
                 pattern,
                 f'["{a}", "{b}", {chi_value}]',
                 replaced_line,
             )
         contents[chi_start_line+i] = replaced_line
-        #print(replaced_line)
+
+    for i, line in enumerate(contents[per_start_line:per_end_line+1]):
+        replaced_line = line
+        for a, pattern, per_value in per_args:
+            replaced_line = re.sub(
+                pattern,
+                f'[["{a}"], [{per_value}]]',
+                replaced_line,
+            )
+        contents[per_start_line+i] = replaced_line
         
     if out is not None:
         with open(out, "w") as out_file:
@@ -123,8 +170,14 @@ if __name__ == '__main__':
             dest=f"{bead_1},{bead_2}", default=None, metavar="",
             help=f"{bead_1}-{bead_2} interaction energy",
         )
+    for b in beads:
+        parser.add_argument(
+	    f"-{b},{b}", type=float,
+            dest=f"{b},{b}", default=None, metavar="",
+            help=f"{b} relative permittivity",
+	)
     args = parser.parse_args()
-
+    
     config_file_path = os.path.abspath(args.config_file)
     out_file_path = None
     if args.out is None:

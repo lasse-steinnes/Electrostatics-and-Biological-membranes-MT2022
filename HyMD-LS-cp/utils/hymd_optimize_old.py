@@ -121,7 +121,7 @@ def parse_molecule_species(names, molecules=None):
             "name:" + s for s in (
                 "N",
             )
-        ]
+        ]        
     )
     dmpc = (  # Called DLPC in Martini
         [
@@ -603,7 +603,6 @@ def compute_centered_histogram(
         H = 0
         L = positions.shape[0]
         M = min(L - 1, skip_first + frames * skip) if frames is not None else L
-
         for time_step in range(skip_first, M, skip):
             p = positions[time_step, :, axis]
 
@@ -618,7 +617,6 @@ def compute_centered_histogram(
             histogram_bins = np.histogram_bin_edges(
                 np.zeros(shape=(1,)), bins=bins, range=range__,
             )
-
             histograms = compute_histogram_single(
                 p, centers[time_step], box_length_axis, species, histograms,
                 density, histogram_bins, box_length, axis_range,
@@ -664,14 +662,13 @@ def compute_centered_histogram(
             histogram_bins = np.histogram_bin_edges(
                 np.zeros(shape=(1,)), bins=bins, range=range__,
             )
-
             histograms = compute_histogram_single(
                 p, centers[time_step] / 10.0, box_length_axis, species,
                 histograms, density, histogram_bins, box_length, axis_range,
             )
             last_frame = time_step
             H += 1
-
+        
         if not silent:
             if positions.trajectory[skip_first].time > 1000.0:
                 t0 = positions.trajectory[skip_first].time / 1000.0
@@ -699,7 +696,7 @@ def compute_centered_histogram(
 
     for s in histograms:
         histograms[s] /= float(H)
-
+                
     if symmetrize:
         for s in histograms:
             histograms[s] = 0.5 * (histograms[s] + np.flip(histograms[s]))
@@ -782,7 +779,7 @@ def plot_histogram(
         for i in ignore:
             if re.fullmatch(i, k) is not None:
                 keys.remove(k)
-
+        
     N = bin_midpoints.size
     if np.mod(N, 2) == 2:
         bin_midpoints -= np.mean(bin_midpoints[N//2 - 1:N//2 + 1])
@@ -876,7 +873,6 @@ def plot_histogram(
 def compute_histogram_fitness(
     bin_midpoints, histogram_reference, histogram_test, ignore=None,
     resolution="names", area_per_lipid_test=None, area_per_lipid_ref=None,
-    pressure_test = None, pressure_ref = None,
 ):
     """Computes various metrics of the similarity between two histograms
 
@@ -944,39 +940,19 @@ def compute_histogram_fitness(
         accuracy = {**accuracy, **accuracy_add}
         keys = keys + ["area_per_lipid"]
 
-    if pressure_ref is not None and pressure_test is not None:
-        accuracy_add = {"pressure": {m: None for m in metrics}}
-        accuracy = {**accuracy, **accuracy_add}
-        keys = keys + ["pressure"]
-
     for s in keys:
         if s == "area_per_lipid":
             y = np.tile(
-                np.array(  # area per lipid in nm
+                np.array(  # area per lipid in Å
                     [100 * np.mean(area_per_lipid_test)], dtype=np.float64
                 ), 2,
             ).T
-            print("Area per lipid: ", y[0], "[nm^2 / lipid]")
-            y_true = np.array([72.0, 72.0], dtype=np.float64)
-
-        elif s == "pressure":
-            y = np.zeros(shape = (3,2,), dtype=np.float64)
-            for i in range(3):
-                y[i,:] = np.tile(
-                    np.array(  # surface tension in bar * nm
-                    [np.mean(pressure_test[i,:])], dtype=np.float64
-                    ), 2,
-                ).T
-            print("Average value of pressure, Px: ", y[0][0] , "Py: ", y[1][0], "Pz: ", y[2][0], "[kJ / (mol nm^3)]")
-            y_true = np.zeros(shape = (3,2), dtype=np.float64) + 0.06
-            # 1 kJ/ (mol nm^3) = 16.6 bar
-            #print("y_ref ", y_true)
-            #print("y ", y)
+            print("Area per lipid: ", y[0])
+            y_true = np.array([63.0, 63.0], dtype=np.float64)
 
         else:
             y = histogram_test[s]
             y_true = histogram_reference[s]
-
 
         accuracy[s]["MSE"] = sklm.mean_squared_error(
             y_true, y, squared=True
@@ -1003,22 +979,16 @@ def compute_histogram_fitness(
         if s == "area_per_lipid":
             accuracy[s]["SMAPE"] = accuracy[s]["MSE"]
 
-        if s == "pressure":
-            penalty_scaling = 100.0
-            accuracy[s]["SMAPE"] = penalty_scaling * accuracy[s]["MSE"]
-
     if resolution == "names":
         total_re = re.compile("name:.*")
     elif resolution == "types":
         total_re = re.compile("type:.*")
     else:
         raise ValueError("resolution must be either 'names' or 'types'.")
-
     for k in accuracy.keys():
         if re.fullmatch(total_re, k) is None:
-            if k != "area_per_lipid" and k != "pressure":
+            if k != "area_per_lipid":
                 keys.remove(k)
-
 
     accuracy["total"] = {}
     for m in metrics:
@@ -1115,44 +1085,6 @@ def calculate_area_per_lipid(
     return area_per_lipid[range(skip_first_, M, skip_)]
 
 
-def calculate_pressure(positions, axis, parser, ref, traj_pressure = None):
-    """
-    Returns pressure components as an array of shape (3,M) M being number of frames
-    """
-    if ref is False:
-        skip_ = parser.skip
-        skip_first_ = parser.skip_first
-        frames_ = parser.frames
-        n_frames = positions.shape[0]
-
-        if isinstance(traj_pressure, np.ndarray):
-
-            pressure = np.zeros(shape=(3,n_frames,), dtype=np.float64)
-
-            for i in range(n_frames):
-                #Lz =  box[i,2,2]
-                px,py, pz = traj_pressure[i,-3:]
-                pressure[0,i] = px
-                pressure[1,i] = py
-                pressure[2,i] = pz
-
-    else:
-        skip_ = parser.skip_ref
-        skip_first_ = parser.skip_first_ref
-        frames_ = parser.frames_ref
-
-        if isinstance(positions, mda.Universe):
-            t = np.array(
-                [ts.time for ts in positions.trajectory], dtype=np.float64,
-            )
-            n_frames = len(t)
-        # What to do with ref: Just keep array with 0 for now. What we expect
-        # possibility in future to add something non-zero here if wanted
-        pressure = np.zeros(shape=(3,n_frames,), dtype=np.float64)
-
-    M = min(n_frames - 1, skip_first_ + frames_ * skip_) if frames_ is not None else n_frames  # noqa: E501
-    return pressure[:,range(skip_first_, M, skip_)]
-
 def action_compute_histogram(parser, ref=False):
     """Compute histogram and area per lipid from H5MD or Gromacs trajectory
 
@@ -1214,7 +1146,6 @@ def action_compute_histogram(parser, ref=False):
         )
         species = parse_molecule_species(names, molecules=molecules)
 
-
         histogram_bins, histograms = compute_centered_histogram(
             carbon_center_of_mass, positions, simulation_box, species,
             axis=axis, bins=parser.bins, symmetrize=parser.symmetrize,
@@ -1224,6 +1155,8 @@ def action_compute_histogram(parser, ref=False):
                 os.path.abspath(top_path) + ", " + os.path.abspath(traj_path)
             ), range_=parser.range,
         )
+        top_file_hdf5.close()
+        traj_file_hdf5.close()
 
         if parser.area_per_lipid:
             area_per_lipid = calculate_area_per_lipid(
@@ -1232,16 +1165,6 @@ def action_compute_histogram(parser, ref=False):
             )
         else:
             area_per_lipid = None
-
-        if parser.pressure:
-            traj_pressure = traj_file_hdf5.root.observables.pressure.value.read()
-            pressure = calculate_pressure(positions, axis, parser, ref=False, traj_pressure = traj_pressure,
-        )
-        else:
-            pressure = None
-
-        top_file_hdf5.close()
-        traj_file_hdf5.close()
 
     except tables.exceptions.HDF5ExtError:
         universe = load_gromacs_simulation(top_path, traj_path)
@@ -1279,13 +1202,7 @@ def action_compute_histogram(parser, ref=False):
             )
         else:
             area_per_lipid = None
-
-        if parser.pressure:
-            pressure = calculate_pressure(universe, axis,parser, ref = ref)
-        else:
-            pressure = None
-
-    return histogram_bins, histograms, area_per_lipid, pressure
+    return histogram_bins, histograms, area_per_lipid
 
 
 def action_plot(parser):
@@ -1303,7 +1220,7 @@ def action_plot(parser):
     ax : matplotlib.pyplot.Axes
         Matplotlib axes used in the plot.
     """
-    histogram_bins, histograms, area_per_lipid, pressure = action_compute_histogram(
+    histogram_bins, histograms, area_per_lipid = action_compute_histogram(
         parser
     )
     fig, ax = plot_histogram(
@@ -1338,17 +1255,16 @@ def action_fitness(parser):
         `histogram_test` in addition to the sum total fitness across all
         species for each of the K available metrics.
     """
-    histogram_bins, histograms_test, area_per_lipid_test, pressure_test = (
+    histogram_bins, histograms_test, area_per_lipid_test = (
         action_compute_histogram(parser)
     )
-    _, histograms_ref, area_per_lipid_ref, pressure_ref = (
+    _, histograms_ref, area_per_lipid_ref = (
         action_compute_histogram(parser, ref=True)
     )
     fitness = compute_histogram_fitness(
         histogram_bins, histograms_ref, histograms_test,
         area_per_lipid_test=area_per_lipid_test,
-        area_per_lipid_ref=area_per_lipid_ref, pressure_test = pressure_test,
-        pressure_ref = pressure_ref ,ignore=parser.ignore,
+        area_per_lipid_ref=area_per_lipid_ref, ignore=parser.ignore,
         resolution=parser.resolution,
     )
     return fitness
@@ -1385,13 +1301,8 @@ def action_save_fitness(parser, fitness):
                 return i
         if "total" in k:
             return 2147483646
-
-        elif "area_per_lipid" in k: ## add or for pressure here?
+        elif "area_per_lipid" in k:
             return 2147483646 - 1
-
-        elif "pressure" in k:
-            return 2147483646 - 2
-
         else:
             return 10
 
@@ -1457,9 +1368,6 @@ def action_fitness_range(parser, figwidth=4.0, figheight=3.0, show=True):
     simulation_box = traj_file_hdf5.root.particles.all.box.edges.read()
     positions = traj_file_hdf5.root.particles.all.position.value.read()
     times = traj_file_hdf5.root.particles.all.position.time.read()
-
-
-
     carbon_indices = find_species_indices(names, "C")
 
     carbon_center_of_mass = np.zeros(shape=(3, positions.shape[0]))
@@ -1596,15 +1504,6 @@ if __name__ == '__main__':
         help="Include the area per lipid in the fitness calculation",
         dest="area_per_lipid",
     )
-
-    parser.add_argument(
-            "--pressure", action="store_true", default=False,
-            help= "Include pressure in fitness calculation. Penalize deviation from target pressure 1 bar, \
-            to obtain non-zero surface tension and intact area per lipid (With intention of  \
-            NVT otimization transferrable to NPT simulations)",
-            dest="pressure",
-    )
-
     parser.add_argument(
         "--axis", type=int, choices=[0, 1, 2], default=2,
         help="the direction in which to calculate the histogram(s)",
