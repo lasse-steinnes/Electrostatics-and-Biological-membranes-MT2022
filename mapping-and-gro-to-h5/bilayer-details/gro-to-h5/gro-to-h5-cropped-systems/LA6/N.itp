@@ -1,7 +1,0 @@
-[ moleculetype ]
-; molname   nrexcl
-N
-
-[ atoms ]
-;id   type  resnr   residu  atom    cgnr    charge    mass
-1      N    1       Ion      N       1       2.0       72.0 ; 

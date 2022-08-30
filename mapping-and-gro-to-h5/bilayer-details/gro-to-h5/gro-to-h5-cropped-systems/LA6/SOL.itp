@@ -1,7 +1,0 @@
-[ moleculetype ]
-; molname   nrexcl
-  SOL
-
-[ atoms ]
-;id  type resnr   residu  atom    cgnr    charge    mass
-1    W    1       SOL     SOL     1        0.0      72.0 ;
