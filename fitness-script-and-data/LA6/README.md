@@ -115,9 +115,10 @@ Test on reduced systems
  python3 hymd_optimize.py plot --traj sim-la-alias.H5 --top lipid-A-hexa-feb-2022.h5 --skip-first 0 --frames 400 --resolution types --bins 100 --no-marker --range 8 --ignore "all" "solvent" "name:.*" "lipid:.*" "ions"  --symmetrize
 
 
- ##############     To thesis     ###########
+ ##   To thesis     
 
 Plots to thesis:
+
 python3 hymd_optimize.py plot --traj gpe-Flory-huggins.H5 --top lipid-A-hexa-feb-2022.h5 --skip-first 5 --resolution types --bins 100 --no-marker --range 9.39 --ignore "all" "solvent" "name:.*" "lipid:.*" "ions"  --symmetrize
 
 python3 hymd_optimize.py plot --traj gpe-lower-FH.H5 --top lipid-A-hexa-feb-2022.h5 --skip-first 5 --resolution types --bins 100 --no-marker --range 9.39 --ignore "all" "solvent" "name:.*" "lipid:.*" "ions"  --symmetrize
@@ -134,6 +135,7 @@ python3 hymd_optimize.py plot --traj aa-traj.xtc --top frame90ns.gro --skip-firs
 -lipid --skip-ref 20
 
 fitness to thesis:
+
 python3 hymd_optimize.py fitness --traj gpe-Flory-huggins.H5 --top lipid-A-hexa-feb-2022.h5 --skip-first 5 --axis 2  --ref-traj aa-traj.xtc --ref-top frame90ns.gro --skip-first-ref 0  --axis-ref 2 --resolution types  --bins 100 --no-marker --out fitness-gpe-FH.txt --range 8 --symmetrize --force
 
 python3 hymd_optimize.py fitness --traj gpe-lower-FH.H5 --top lipid-A-hexa-feb-2022.h5 --skip-first 5 --axis 2  --ref-traj aa-traj.xtc --ref-top frame90ns.gro --skip-first-ref 0  --axis-ref 2 --resolution types  --bins 100 --no-marker --out fitness-gpe-lower-FH.txt --range 8 --symmetrize --force
