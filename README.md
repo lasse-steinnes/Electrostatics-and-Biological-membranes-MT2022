@@ -58,11 +58,13 @@ My contributions can be summarized as follows:
 
 
 ### Code: Link and description of folders and programmes
-- [HyMD-LS-cp](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/HyMD-LS-cp) : This is my version of HyMD, where I implement the iterative GPE solver. My contributions are mainly in the folder hymd
-  1. [main.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/HyMD-LS-cp/hymd/main.py) : Runs the MD integrations with or without variable dielectric electrostatics, depending on toml input specications.
+- [HyMD-LS-cp](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/HyMD-LS-cp) : This is my version of HyMD, where I implement the iterative GPE solver. My contributions are mainly in the folder hymd, more specifically in
+  1. [main.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/HyMD-LS-cp/hymd/main.py) : Runs the MD integrations with or without variable dielectric electrostatics, depending on toml input specifications.
   2. [field.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/HyMD-LS-cp/hymd/field.py) : Defines forces and energy functions on grid with more. 
   3. [input_parser.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/HyMD-LS-cp/hymd/input_parser.py) :  Reads off the input tomli file and check that correct/needed input is given correctly.
   4. [file_io.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/HyMD-LS-cp/hymd/file_io.py) : File input and output. Stores static and dynamic variables to HDF5 trajectory file.
+  - The folder [utils](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/HyMD-LS-cp/utils) includes programmes with information on the LA6 molecule, and scripts used by the BO-optimization. These scripts are 1)  [change_chi.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/HyMD-LS-cp/utils/change_chi.py), 2) [get_next_point.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/HyMD-LS-cp/utils/get_next_point.py) 3) [get_next_point_random.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/HyMD-LS-cp/utils/get_next_point_random.py) 4) [hymd_optimize.py](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/blob/main/HyMD-LS-cp/utils/hymd_optimize.py)
+  
   
 ### Protocols
 #### HyMD-elec-GPE protocol
