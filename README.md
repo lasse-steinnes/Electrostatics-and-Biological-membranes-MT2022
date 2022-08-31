@@ -32,7 +32,6 @@ Hello there, and welcome to this Github-page, which is dedicated to the code rel
 
 ### Thesis Abstract
 > I develop and apply an iterative method to solve a general Poisson equation in Fourier space, with a variable dielectric. The iterative method is implemented in the molecular dynamics software HylleraasMD, using the Hamiltonian hPF formalism.
-%I develop an iterative method to solve a general Poisson equation in Fourier space, with a variable dielectric. The iterative method is implemented in the molecular dynamics software HylleraasMD. The platform uses the newly developed Hamiltonian formalism of the hybrid-particle field to obtain long range and non-bonded forces from a cloud-in-cell representation of coarse grain beads, making it possible to simulate large systems efficiently over biologically relevant time scales.
 
 > First, I benchmark the iterative method with known cases. The method reproduces the electrostatic potential from an analytically constructed charge number density. When comparing with the Coulomb interaction of point particles, the iterative method yields reasonable magnitudes in force and energy, and momentum and energy are conserved. In addition, the method reproduces the behaviour of a 5mM electrolytic solution, with ideal monovalent ions dissolved in a biphase of liquid oil and water. 
 
