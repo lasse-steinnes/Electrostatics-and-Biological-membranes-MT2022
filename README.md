@@ -111,7 +111,7 @@ My contributions can be summarized as follows:
 ## Acknowlegdement
 First and foremost, I am grateful for the help and advice of my supervisor, Michele Cascella, and my co-supervisor, Morten Hjorth-Jenssen, who both made this project a possibility for me. The following people has also been of great support and importance to me in the process of my Master Thesis: Sidra Rashid - for shared laughs and struggles, Xinmeng Li - for getting me started, Samiran Sen, Morten Ledum, Marinella Guivanetti and Manuel Carrer. 
 
-Acknowlegdment goes to Thereza Soares at the University of S$\tilde{\text{a}}$o Paulo, whose research group provided the united-atom reference frames, and to Manuela Nader, who was vital in the mapping of those into a coarse grain representation. 
+Acknowlegdment goes to Thereza Soares at the University of S :math:$'\\tilde{\\text{a}}$'o Paulo, whose research group provided the united-atom reference frames, and to Manuela Nader, who was vital in the mapping of those into a coarse grain representation. 
 
 Furthermore, I have been fortunate enough not only to be surrounded by intelligent, interesting and kind people, who make a consistent effort in contributing to the scientific community, but also being a part of two centres of Excellence during my master studies: The Center For Computing in Science Education and the Hylleraas Centre for Quantum Molecular Sciences. They both have excellent office and computing facilities. On that note, I would like to thank the National Infrastructure for Research Data ([NIRD](https://documentation.sigma2.no/files_storage/nird.html)), which has provided the high performance computing facilities I needed to finish this thesis. 
 
