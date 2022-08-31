@@ -56,6 +56,8 @@ My contributions can be summarized as follows:
     2. Optimize Flory Huggins mixing parameters for LA6 with divalent counter-ions in the NVT ensemble with Bayesian optimization. If successfull, this means one can optimize mixing parameters in the NVT ensemble, to obtain a better model description of bilayers containing LA6.
     3. After optimization, test transferability of optimized parameters on the LPS-Re model system with divalent cations in the NVT ensemble. If the results improve concordance with AA-simulations, it means that optimized parameters can be applied to chemically similar model systems.
 
+### Running HyMD
+You can read more about how to install and run HyMD at Github [HyMD](https://github.com/Cascella-Group-UiO/HyMD).
 
 ### Code: Link and description of folders and programmes
 - [HyMD-LS-cp](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/HyMD-LS-cp) : This is my version of HyMD, where I implement the iterative GPE solver. My contributions are mainly in the folder hymd, more specifically in
