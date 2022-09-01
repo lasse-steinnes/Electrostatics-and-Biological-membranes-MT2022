@@ -1,4 +1,4 @@
-# Electrostatics in Mesoscale Simulations of Biological Membranes using the Hybrid-Particle Field Approach
+# Electrostatics in Mesoscale Simulations of Biological Membranes using the Hybrid Particle-Field Approach
 
 ## Simulation and analysis of biological model systems with HyMD
 Hello there, and welcome to this Github-page, which is dedicated to the code relevant for my thesis, completing the degree M.sc. Computational Science: Physics (2020-2022) at the University of Oslo. The title of my thesis is: *Electrostatics in Mesoscale Simulations of Biological Membranes using the Hybrid Particle-Field Approach*.
