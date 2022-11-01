@@ -60,7 +60,7 @@ My contributions can be summarized as follows:
 You can read more about how to install and run HyMD at Github [HyMD](https://github.com/Cascella-Group-UiO/HyMD).
 
 ### Code: Link and description of folders and programmes
-- My version of HyMD will be avaiable on this repository after an article has been published related to my work. 
+- My version of HyMD will be available on this repository after an article has been published related to my work. 
   
  - [Validation-and-analysis](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/Validation-and-analysis) : Contains folders for analysing and benchmarking the iterative GPE method. 
     1. [analytical-case](https://github.com/lasse-steinnes/Electrostatics-and-Biological-membranes-MT2022/tree/main/Validation-and-analysis/analytical-case) : I construct an expression for the electrostatic potential, and define a variable dielectric function. From the forementioned functions, I derive at a charge density. I enter the charge density into the iterative method to check if the electrostatic potential is reproduced, and check how the results vary with different parameters.
